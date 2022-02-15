@@ -1,7 +1,7 @@
 
 @extends('client.layout.layout')
 
-@section('title','Blog')
+@section('title','Contact')
 
 @section('contact','active')
 
@@ -14,7 +14,7 @@
 <!-- Start main-content -->
 <div class="main-content">
 	<!-- Section: home -->
-	<section class="page-title divider layer-overlay overlay-dark-8 section-typo-light bg-img-center" data-tm-bg-img="images/bg/as02.jpg">
+	<section class="page-title divider layer-overlay overlay-dark-8 section-typo-light bg-img-center" data-tm-bg-img="{{asset('public/client/images/bg/as02.jpg')}}">
 		<div class="container pt-90 pb-90">
 			<!-- Section Content -->
 			<div class="section-content">
@@ -45,7 +45,7 @@
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="tm-sc tm-sc-custom-columns-holder tm-cc-two-columns tm-cc-responsive-mode-1280">
-							<div class="tm-sc tm-sc-custom-columns-holder-item" data-item-class="senior-mascot-custom-columns-283434" data-tm-bg-img="images/bg/bg8.jpg">
+							<div class="tm-sc tm-sc-custom-columns-holder-item" data-item-class="senior-mascot-custom-columns-283434" data-tm-bg-img="{{asset('public/client/images/bg/bg8.jpg')}}">
 								<div class="item-inner">
 									<div class="item-content senior-mascot-custom-columns-283434">
 									</div>

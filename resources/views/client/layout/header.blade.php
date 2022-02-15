@@ -9,7 +9,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-    <link rel="shortcut icon" href="images/favicon.png" id="fav-shortcut" type="image/x-icon">
+    <link rel="shortcut icon" href="{{setting('app_fevicon')}}" id="fav-shortcut" type="image/x-icon">
     <link rel="icon" href="{{asset('public/client/images/logo.png')}}" id="fav-icon" type="image/x-icon">
 
 
@@ -94,19 +94,19 @@
                                 <div class="col">
                                     <div class="row header-nav-col-row">
                                         <div class="col-sm-auto align-self-center">
-                                            <a class="menuzord-brand site-brand" href="index-mp-layout1.html">
-                                                <img class="logo-default logo-1x" src="images/logo-wide.png" alt="Logo">
+                                            <a class="menuzord-brand site-brand" href="{{route('app.home')}}">
+                                                <img class="logo-default logo-1x" src="{{setting('app_icon')}}" alt="Logo">
                                                 <img class="logo-default logo-2x retina" src="images/logo-wide%402x.png" alt="Logo">
                                             </a>
                                         </div>
                                         <div class="col-sm-auto ml-auto pr-0 align-self-center">
                                             <nav id="top-primary-nav" class="menuzord green" data-effect="fade" data-animation="none" data-align="right">
                                                 <ul id="main-nav" class="menuzord-menu">
-                                                    <li class="@yield('active')"><a href="{{route('app.home')}}">Home</a></li>
-                                                    <li class="@yield('active')"><a href="{{route('app.about')}}">About</a></li>
-                                                    <li class="@yield('active')"><a href="{{route('app.service')}}">Services</a></li>
-                                                    <li class="@yield('active')"><a href="{{route('app.blogs')}}">Blogs</a></li>
-                                                    <li class="@yield('active')"><a href="{{route('app.contact')}}">Contact</a></li>
+                                                    <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{route('app.home')}}">Home</a></li>
+                                                    <li class="{{ Request::is('about') ? 'active' : '' }}"><a href="{{route('app.about')}}">About</a></li>
+                                                    <li class="{{ Request::is('service') ? 'active' : '' }}"><a href="{{route('app.service')}}">Services</a></li>
+                                                    <li class="{{ Request::is('blogs') ? 'active' : '' }}"><a href="{{route('app.blogs')}}">Blogs</a></li>
+                                                    <li class="{{ Request::is('contact') ? 'active' : '' }}"><a href="{{route('app.contact')}}">Contact</a></li>
                                                 </ul>
                                             </nav>
                                         </div>

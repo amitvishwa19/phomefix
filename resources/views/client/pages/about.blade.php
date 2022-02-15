@@ -99,7 +99,7 @@
 									<div class="working-steps-item-inner">
 										<div class="image-holder-wrapper">
 											<div class="image-holder">
-												<div class="image-holder-inner"> <img src="images/photos/w1.jpg" alt="Image"></div>
+												<div class="image-holder-inner"> <img src="{{asset('public/client/images/photos/w1.jpg')}}" alt="Image"></div>
 												<div class="tag">A</div>
 											</div>
 										</div>
@@ -117,7 +117,7 @@
 									<div class="working-steps-item-inner">
 										<div class="image-holder-wrapper">
 											<div class="image-holder">
-												<div class="image-holder-inner"> <img src="images/photos/w2.jpg" alt="Image"></div>
+												<div class="image-holder-inner"> <img src="{{asset('public/client/images/photos/w2.jpg')}}" alt="Image"></div>
 												<div class="tag">B</div>
 											</div>
 										</div>
@@ -135,7 +135,7 @@
 									<div class="working-steps-item-inner">
 										<div class="image-holder-wrapper">
 											<div class="image-holder">
-												<div class="image-holder-inner"> <img src="images/photos/w3.jpg" alt="Image"></div>
+												<div class="image-holder-inner"> <img src="{{asset('public/client/images/photos/w3.jpg')}}" alt="Image"></div>
 												<div class="tag">C</div>
 											</div>
 										</div>
@@ -153,7 +153,7 @@
 									<div class="working-steps-item-inner">
 										<div class="image-holder-wrapper">
 											<div class="image-holder">
-												<div class="image-holder-inner"> <img src="images/photos/w4.jpg" alt="Image"></div>
+												<div class="image-holder-inner"> <img src="{{asset('public/client/images/photos/w4.jpg')}}" alt="Image"></div>
 												<div class="tag">D</div>
 											</div>
 										</div>
@@ -177,7 +177,7 @@
 	<!-- End Divider -->
 
 	<!-- Section: Service -->
-	<section class="bg-img-no-repeat" data-tm-bg-img="images/bg/bg-shape-bconsul1.png">
+	<section class="bg-img-no-repeat" data-tm-bg-img="{{asset('public/client/images/bg/bg-shape-bconsul1.png')}}">
 		<div class="container pt-90">
 			<div class="section-title">
 				<div class="row justify-content-md-center">
@@ -202,10 +202,9 @@
 						<div class="services-block mb-50">
 							<div class="inner-box">
 								<div class="thumb">
-									<img src="images/service/1.jpg" alt=""/>
+									<img src="{{asset('public/client/images/service/1.jpg')}}" alt=""/>
 								</div>
 								<div class="content">
-									<div class='symbol-icon'><img src='images/icon/f1.png' alt='Image'/></div>
 									<h4><a href="#">Laptop Repair</a></h4>
 									<p>Leverage agile frameworks to provide a robust synopsis for high level overviews.</p>
 								</div>
@@ -216,10 +215,9 @@
 						<div class="services-block mb-50">
 							<div class="inner-box">
 								<div class="thumb">
-									<img src="images/service/2.jpg" alt=""/>
+									<img src="{{asset('public/client/images/service/2.jpg')}}" alt=""/>
 								</div>
 								<div class="content">
-									<div class='symbol-icon'><img src='images/icon/f2.png' alt='Image'/></div>
 									<h4><a href="#">Computer Repair</a></h4>
 									<p>Leverage agile frameworks to provide a robust synopsis for high level overviews.</p>
 								</div>
@@ -230,10 +228,9 @@
 						<div class="services-block mb-50">
 							<div class="inner-box">
 								<div class="thumb">
-									<img src="images/service/3.jpg" alt=""/>
+									<img src="{{asset('public/client/images/service/3.jpg')}}" alt=""/>
 								</div>
 								<div class="content">
-									<div class='symbol-icon'><img src='images/icon/f3.png' alt='Image'/></div>
 									<h4><a href="#">Data Recovery</a></h4>
 									<p>Leverage agile frameworks to provide a robust synopsis for high level overviews.</p>
 								</div>
@@ -244,10 +241,9 @@
 						<div class="services-block mb-lg-50">
 							<div class="inner-box">
 								<div class="thumb">
-									<img src="images/service/4.jpg" alt=""/>
+									<img src="{{asset('public/client/images/service/4.jpg')}}" alt=""/>
 								</div>
 								<div class="content">
-									<div class='symbol-icon'><img src='images/icon/f4.png' alt='Image'/></div>
 									<h4><a href="#">Phone Unlock</a></h4>
 									<p>Leverage agile frameworks to provide a robust synopsis for high level overviews.</p>
 								</div>
@@ -258,10 +254,9 @@
 						<div class="services-block mb-lg-50">
 							<div class="inner-box">
 								<div class="thumb">
-									<img src="images/service/5.jpg" alt=""/>
+									<img src="{{asset('public/client/images/service/5.jpg')}}" alt=""/>
 								</div>
 								<div class="content">
-									<div class='symbol-icon'><img src='images/icon/f5.png' alt='Image'/></div>
 									<h4><a href="#">Mobile Repair</a></h4>
 									<p>Leverage agile frameworks to provide a robust synopsis for high level overviews.</p>
 								</div>
@@ -272,10 +267,9 @@
 						<div class="services-block mb-lg-50">
 							<div class="inner-box">
 								<div class="thumb">
-									<img src="images/service/6.jpg" alt=""/>
+									<img src="{{asset('public/client/images/service/6.jpg')}}" alt=""/>
 								</div>
 								<div class="content">
-									<div class='symbol-icon'><img src='images/icon/f6.png' alt='Image'/></div>
 									<h4><a href="#">Hardware Update</a></h4>
 									<p>Leverage agile frameworks to provide a robust synopsis for high level overviews.</p>
 								</div>
@@ -296,12 +290,12 @@
 					<div class="col-sm-12">
 						<div class="tm-sc tm-sc-clients tm-sc-clients-carousel owl-dots-light-skin owl-dots-center clients-animation-zoom">
 							<div class="owl-carousel owl-theme tm-owl-carousel-6col" data-autoplay="true" data-loop="true" data-duration="6000" data-smartspeed="300" data-margin="30" data-stagepadding="0" data-laptop="2">
-								<div class="item"> <a target="_blank" href="#"> <img src='images/clients/client-white-img2.png' alt='Image' /> </a></div>
-								<div class="item"> <a target="_blank" href="#"> <img src='images/clients/client-white-img4.png' alt='Image' /> </a></div>
-								<div class="item"> <a target="_blank" href="#"> <img src='images/clients/client-white-img1.png' alt='Image' /> </a></div>
-								<div class="item"> <a target="_blank" href="#"> <img src='images/clients/client-white-img11.png' alt='Image' /> </a></div>
-								<div class="item"> <a target="_blank" href="#"> <img src='images/clients/client-white-img9.png' alt='Image' /> </a></div>
-								<div class="item"> <a target="_blank" href="#"> <img src='images/clients/client-white-img8.png' alt='Image' /> </a></div>
+								<div class="item"> <a target="_blank" href="#"> <img src='{{asset('public/client/images/phones/apple.jpg')}}' alt='Image' /> </a></div>
+								<div class="item"> <a target="_blank" href="#"> <img src='{{asset('public/client/images/phones/apple.jpg')}}' alt='Image' /> </a></div>
+								<div class="item"> <a target="_blank" href="#"> <img src='{{asset('public/client/images/phones/apple.jpg')}}' alt='Image' /> </a></div>
+								<div class="item"> <a target="_blank" href="#"> <img src='{{asset('public/client/images/phones/apple.jpg')}}' alt='Image' /> </a></div>
+								<div class="item"> <a target="_blank" href="#"> <img src='{{asset('public/client/images/phones/apple.jpg')}}' alt='Image' /> </a></div>
+								<div class="item"> <a target="_blank" href="#"> <img src='{{asset('public/client/images/phones/apple.jpg')}}' alt='Image' /> </a></div>
 							</div>
 						</div>
 					</div>

@@ -49,7 +49,7 @@
 									<div class="entry-header">
 										<div class="post-thumb lightgallery-lightbox">
 											<div class="post-thumb-inner">
-												<div class="thumb"> <img src="images/blog/1.jpg" alt="Image"/></div>
+												<div class="thumb"> <img src="{{asset('public/client/images/blog/1.jpg')}}" alt="Image"/></div>
 											</div>
 										</div>
 										<a class="link" href="#"><i class="fa fa-link"></i></a>
@@ -76,7 +76,7 @@
 									<div class="entry-header">
 										<div class="post-thumb lightgallery-lightbox">
 											<div class="post-thumb-inner">
-												<div class="thumb"> <img src="images/blog/2.jpg" alt="Image"/></div>
+												<div class="thumb"> <img src="{{asset('public/client/images/blog/1.jpg')}}" alt="Image"/></div>
 											</div>
 										</div>
 										<a class="link" href="#"><i class="fa fa-link"></i></a>
@@ -103,7 +103,7 @@
 									<div class="entry-header">
 										<div class="post-thumb lightgallery-lightbox">
 											<div class="post-thumb-inner">
-												<div class="thumb"> <img src="images/blog/3.jpg" alt="Image"/></div>
+												<div class="thumb"> <img src="{{asset('public/client/images/blog/1.jpg')}}" alt="Image"/></div>
 											</div>
 										</div>
 										<a class="link" href="#"><i class="fa fa-link"></i></a>

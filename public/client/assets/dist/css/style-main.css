@@ -5488,8 +5488,8 @@ textarea.form-control {
     background: #fff;
     border: none;
     border-bottom: 1px solid #ddd;
-    padding: 14px;
-    padding-left: 0;
+    padding: 4px;
+    padding-left: 10 !important;
     margin-bottom: 28px;
     width: 100%; }
   .tm-contact-form-transparent textarea {
@@ -5498,7 +5498,7 @@ textarea.form-control {
     border-bottom: 1px solid #ddd;
     width: 100%;
     padding: 15px;
-    padding-left: 0;
+    padding-left: 5px !important;
     margin-bottom: 28px; }
   .tm-contact-form-transparent .form-submit-btn {
     padding: 12px 32px;
@@ -5530,13 +5530,13 @@ textarea.form-control {
   select{
     border: none;
     border-bottom: 1px solid #ddd;
-    padding: 14px;
+    padding: 4px;
     padding-left: 0;
     margin-bottom: 28px;
     width: 100%;
-    background:transparent;
+   
     border-bottom: 1px solid #ddd;
-    color:#fff;
+    
   }
 
 
@@ -5635,10 +5635,10 @@ textarea.form-control {
     background: #38e17f;
     color: #fff; }
 
-.tm-contact-form-transparent input[type=text],
+/* .tm-contact-form-transparent input[type=text],
 .tm-contact-form-transparent input[type=email],
 .tm-contact-form-transparent textarea {
-  background: transparent; }
+  background: transparent; } */
 
 /*Reservation Form*/
 .reservation-form {
@@ -5667,7 +5667,7 @@ textarea.form-control {
       font-family: 'fontawesome';
       position: relative;
       line-height: 1;
-      font-size: 1rem;
+      font-size: 0.5rem;
       padding: 16px;
       color: #ed5d29;
       background: 0 0;
