@@ -13,7 +13,7 @@
 @section('content')
 
    <!-- Section: inner-header -->
-	<section class="page-title divider layer-overlay overlay-dark-8 section-typo-light bg-img-center" data-tm-bg-img="images/bg/as02.jpg">
+	<section class="page-title divider layer-overlay overlay-dark-8 section-typo-light bg-img-center" data-tm-bg-img="{{asset('public/client/images/bg/as02.jpg')}}">
 		<div class="container pt-90 pb-90">
 			<!-- Section Content -->
 			<div class="section-content">
@@ -23,10 +23,8 @@
 						<nav role="navigation" class="breadcrumb-trail breadcrumbs">
 							<div class="breadcrumbs">
 								<span class="trail-item trail-begin">
-									<a href="#"><span>Home</span></a>
+									<a href="{{route('app.home')}}"><span>PHomefix</span></a>
 								</span>
-								<span><i class="fa fa-angle-right"></i></span>
-								<span class="trail-item"><a href="#"><span>Pages</span></a></span>
 								<span><i class="fa fa-angle-right"></i></span>
 								<span class="trail-item trail-end active">About</span>
 							</div>
