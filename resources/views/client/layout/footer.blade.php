@@ -7,9 +7,9 @@
                             <div id="tm_widget_contact_info-1" class="split-nav-menu clearfix widget widget-contact-info clearfix mb-20">
                                 <div class="tm-widget tm-widget-contact-info contact-info contact-info-style1  contact-icon-theme-colored1">
                                     <div class="thumb">
-                                        <img alt="Logo" src="images/logo-wide-white.png">
+                                        <img alt="Logo" src="{{setting('app_icon')}}">
                                     </div>
-                                    <div class="description">203, Envato Labs, Behind Alis Steet, Melbourne, Australia.immersion along the information close the loop on focusing</div>
+                                    <div class="description">203, Address,Adress,asress along the information close the loop on focusing</div>
                                 </div>
                             </div>
                             <div id="tm_widget_social_list_custom-1" class="split-nav-menu clearfix widget widget-social-list-custom clearfix">
