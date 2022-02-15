@@ -31,13 +31,19 @@ class ClientController extends Controller
     public function blog()
     {
 
-        return view('client.pages.blog');
+        return view('client.pages.blogs');
     }
 
     public function about()
     {
 
         return view('client.pages.about');
+    }
+
+    public function service()
+    {
+
+        return view('client.pages.service');
     }
 
     public function contact()

@@ -20,11 +20,11 @@ class DatabaseSeeder extends Seeder
             RolesPermissionsSeeder::class,
             UserSeeder::class,
             SettingSeeder::class,
-            PostSeeder::class,
-            ClassroomSeeder::class,
-            ChapterSeeder::class,
-            QuizSeeder::class,
-            QuestionSeeder::class,
+            //PostSeeder::class,
+            //ClassroomSeeder::class,
+            //ChapterSeeder::class,
+            //QuizSeeder::class,
+            //QuestionSeeder::class,
         ]);
     }
 }

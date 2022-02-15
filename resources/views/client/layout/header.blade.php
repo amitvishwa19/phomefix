@@ -3,7 +3,7 @@
 
 <head>
    <meta charset="utf-8">
-    <title>{{setting('app_name')}}</title>
+    <title>{{setting('app_name')}} | @yield('title')</title>
 
     <!-- Responsive Settings -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -102,28 +102,11 @@
                                         <div class="col-sm-auto ml-auto pr-0 align-self-center">
                                             <nav id="top-primary-nav" class="menuzord green" data-effect="fade" data-animation="none" data-align="right">
                                                 <ul id="main-nav" class="menuzord-menu">
-                                                    <li class="active"><a href="index-mp-layout1.html">Home</a></li>
-                                                    <li><a href="page-about.html">About</a></li>
-                                                    <!-- <li><a href="#">Pages</a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="page-gallery.html">Gallery</a></li>
-                                                            <li><a href="page-team-grid.html">Team Grid</a></li>
-                                                            <li><a href="page-team-details.html">Team Details</a></li>
-                                                        </ul>
-                                                    </li> -->
-                                                    <li><a href="#home">Service</a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="page-services.html">Service Grid</a></li>
-                                                            <li><a href="page-service-details.html">Service Deatils</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Blog</a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="news-grid.html">News Grid</a></li>
-                                                            <li><a href="news-details.html">News Details</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="page-contact.html">Contact</a></li>
+                                                    <li class="@yield('active')"><a href="{{route('app.home')}}">Home</a></li>
+                                                    <li class="@yield('active')"><a href="{{route('app.about')}}">About</a></li>
+                                                    <li class="@yield('active')"><a href="{{route('app.service')}}">Services</a></li>
+                                                    <li class="@yield('active')"><a href="{{route('app.blogs')}}">Blogs</a></li>
+                                                    <li class="@yield('active')"><a href="{{route('app.contact')}}">Contact</a></li>
                                                 </ul>
                                             </nav>
                                         </div>

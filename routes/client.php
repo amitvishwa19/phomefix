@@ -16,6 +16,7 @@ Route::get('/', [ClientController::class, 'home'])->name('app.home');
 //Route::get('/home', [ClientController::class, 'home'])->name('home');
 Route::get('/contact', [ClientController::class, 'contact'])->name('app.contact');
 Route::get('/about', [ClientController::class, 'about'])->name('app.about');
+Route::get('/service', [ClientController::class, 'service'])->name('app.service');
 Route::get('/blogs', [ClientController::class, 'blogs'])->name('app.blogs');
 Route::get('/cookie_consent', [ClientController::class, 'cookie_consent'])->name('app.cookie.consent');
 

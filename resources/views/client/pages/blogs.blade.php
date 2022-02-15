@@ -3,6 +3,7 @@
 
 @section('title','Blog')
 
+@section('blog','active')
 
 @section('style')
 @endsection
@@ -10,277 +11,126 @@
 
 @section('content')
 
-	{{-- <!-- Banner Section -->
-	<section class="page-banner">
-		<div class="image-layer" style="background-image:url({{asset('public/client/images/background/image-7.jpg')}});"></div>
-		<div class="shape-1"></div>
-		<div class="shape-2"></div>
-		<div class="banner-inner">
-			 <div class="auto-container">
-				  <div class="inner-container clearfix">
-						<h1>Blog Posts</h1>
-						<div class="page-nav">
-							 <ul class="bread-crumb clearfix">
-							 		<li><a href="{{route('app.home')}}">Home</a></li>
-								  	<li class="active">Blog Posts</li>
-							 </ul>
+	<!-- Start main-content -->
+	<div class="main-content-area">
+		<!-- Section: inner-header -->
+		<section class="page-title divider layer-overlay overlay-dark-8 section-typo-light bg-img-center" data-tm-bg-img="images/bg/as02.jpg">
+			<div class="container pt-90 pb-90">
+				<!-- Section Content -->
+				<div class="section-content">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<h2 class="title text-white">Blog</h2>
+							<nav role="navigation" class="breadcrumb-trail breadcrumbs">
+								<div class="breadcrumbs">
+									<span class="trail-item trail-begin">
+										<a href="#"><span>Home</span></a>
+									</span>
+									<span><i class="fa fa-angle-right"></i></span>
+									<span class="trail-item"><a href="#"><span>Pages</span></a></span>
+									<span><i class="fa fa-angle-right"></i></span>
+									<span itemscope itemtype="http://schema.org/ListItem" class="trail-item trail-end active"><span>Blog</span></span>
+								</div>
+							</nav>
 						</div>
-				  </div>
-			 </div>
-		</div>
-  	</section>
-	<!--End Banner Section --> --}}
+					</div>
+				</div>
+			</div>
+		</section>
 
-	<div class="sidebar-page-container">
-		<div class="auto-container">
-			 <div class="row clearfix">
-
-				  <!--Content Side-->
-				  <div class="content-side col-lg-8 col-md-12 col-sm-12">
-						<div class="blog-posts">
-
-                            @foreach($posts as $post)
-
-                                <!--News Block-->
-                                <div class="news-block-two">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <a href="{{route('app.blog',$post->slug)}}"><img src="{{$post->image_url}}" alt=""></a>
-                                        </div>
-                                        <div class="lower-box">
-                                            <div class="post-meta">
-                                                    <ul class="clearfix">
-                                                        <li><span class="far fa-clock"></span>{{ $post->publish_date() }} 20 Mar</li>
-                                                        <li><span class="far fa-user-circle"></span> {{ $post->author->firstname }},{{ $post->author->lastname }}</li>
-                                                        <li><span class="far fa-comments"></span> 2 Comments</li>
-                                                    </ul>
-                                            </div>
-                                            <h4><a href="{{route('app.blog',$post->slug)}}">{{$post->title}}</a>
-                                            </h4>
-                                            <div class="text">{!!str_limit($post->body,400)!!}</div>
-
-                                        </div>
-                                    </div>
-                            </div>
-
-                            @endforeach
-
-							 {{-- <!--News Block-->
-							 <div class="news-block-two">
-								  <div class="inner-box">
-										<div class="image-box">
-											 <a href="{{route('app.blog',$post->slug)}}"><img src="{{asset('public/client/images/resource/news-7.jpg')}}" alt=""></a>
+		<!-- Section: News & Updates-->
+		<section data-tm-bg-img="images/bg/1c9.png">
+			<div class="container">
+				<div class="section-content">
+					<div class="row">
+						<div class="col-md-6 col-lg-6 col-xl-4">
+							<div class="tm-sc tm-sc-blog tm-sc-blog-masonry blog-style1-current-theme mb-lg-30">
+								<article class="post type-post status-publish format-standard has-post-thumbnail">
+									<div class="entry-header">
+										<div class="post-thumb lightgallery-lightbox">
+											<div class="post-thumb-inner">
+												<div class="thumb"> <img src="images/blog/1.jpg" alt="Image"/></div>
+											</div>
 										</div>
-										<div class="lower-box">
-											 <div class="post-meta">
-												  <ul class="clearfix">
-														<li><span class="far fa-clock"></span> 20 Mar</li>
-														<li><span class="far fa-user-circle"></span> Admin</li>
-														<li><span class="far fa-comments"></span> 2 Comments</li>
-												  </ul>
-											 </div>
-											 <h4><a href="{{route('app.blog',$post->slug)}}">basic rules of running web agency business</a>
-											 </h4>
-											 <div class="text">There are many variations of passages of Lorem Ipsum
-												  available, but the majority have suffered alteration in some form, by
-												  injected humour, or randomised words which don't look even slightly
-												  believable. If you are going to use a passage of Lorem Ipsum.</div>
-											 <div class="link-box"><a class="theme-btn" href="blog-single.html">Read More</a>
-											 </div>
-										</div>
-								  </div>
-							 </div>
-
-							 <!--News Block-->
-							 <div class="news-block-two">
-								  <div class="inner-box">
-										<div class="image-box">
-											 <a href="{{route('app.blog',$post->slug)}}"><img src="{{asset('public/client/images/resource/news-8.jpg')}}" alt=""></a>
-											 <a href="https://www.youtube.com/watch?v=Get7rqXYrbQ"
-												  class="vid-link lightbox-image">
-												  <div class="icon"><span class="flaticon-play-button-1"></span></div>
-											 </a>
-										</div>
-										<div class="lower-box">
-											 <div class="post-meta">
-												  <ul class="clearfix">
-														<li><span class="far fa-clock"></span> 20 Mar</li>
-														<li><span class="far fa-user-circle"></span> Admin</li>
-														<li><span class="far fa-comments"></span> 2 Comments</li>
-												  </ul>
-											 </div>
-											 <h4><a href="{{route('app.blog',$post->slug)}}">Delivering the best digital marketing</a></h4>
-											 <div class="text">There are many variations of passages of Lorem Ipsum
-												  available, but the majority have suffered alteration in some form, by
-												  injected humour, or randomised words which don't look even slightly
-												  believable. If you are going to use a passage of Lorem Ipsum.</div>
-											 <div class="link-box"><a class="theme-btn" href="blog-single.html">Read More</a>
-											 </div>
-										</div>
-								  </div>
-							 </div>
-
-							 <!--News Block-->
-							 <div class="news-block-two">
-								  <div class="inner-box">
-
-										<div class="lower-box">
-											 <div class="post-meta">
-												  <ul class="clearfix">
-														<li><span class="far fa-clock"></span> 20 Mar</li>
-														<li><span class="far fa-user-circle"></span> Admin</li>
-														<li><span class="far fa-comments"></span> 2 Comments</li>
-												  </ul>
-											 </div>
-											 <h4><a href="{{route('app.blog',$post->slug)}}">Introducing the latest linoor features</a></h4>
-											 <div class="text">There are many variations of passages of Lorem Ipsum
-												  available, but the majority have suffered alteration in some form, by
-												  injected humour, or randomised words which don't look even slightly
-												  believable. If you are going to use a passage of Lorem Ipsum.</div>
-											 <div class="link-box"><a class="theme-btn" href="blog-single.html">Read More</a>
-											 </div>
-										</div>
-								  </div>
-							 </div>
-
-							 <!--News Block-->
-							 <div class="news-block-three">
-								  <div class="inner-box">
-										<div class="quote-icon"><span>“</span></div>
-										<div class="text">There are many variations of passages of available but majority
-											 have alteration in some by inject humour or random words. There are many
-											 variations of passages of Lorem Ipsum available, but the majority have suffered
-											 alteration.</div>
-										<a href="{{route('app.blog',$post->slug)}}" class="over-link"></a>
-								  </div>
-							 </div>
-
-							 <!--News Block-->
-							 <div class="news-block-three">
-								  <div class="inner-box">
-										<div class="link-icon"><span class="flaticon-link-2"></span></div>
-										<h4><a href="blog-single.html">Delivering the best digital marketing</a></h4>
-										<a href="{{route('app.blog')}}" class="over-link"></a>
-								  </div>
-							 </div> --}}
-
-						</div>
-						<div class="more-box">
-							 <a class="theme-btn btn-style-one" href="blog.html">
-								  <i class="btn-curve"></i>
-								  <span class="btn-title">Load more posts</span>
-							 </a>
-						</div>
-				  </div>
-
-				  <!--Sidebar Side-->
-				  <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
-						<aside class="sidebar blog-sidebar">
-
-							 <div class="sidebar-widget recent-posts">
-								  <div class="widget-inner">
-										<div class="sidebar-title">
-											 <h4>Latest Posts</h4>
-										</div>
-
-										<div class="post">
-											 <figure class="post-thumb"><img src="{{asset('public/client/images/resource/news-thumb-1.jpg')}}" alt="">
-											 </figure>
-											 <h5 class="text"><a href="#">EXPERIENCES THAT CONNECT WITH PEOPLE</a></h5>
-										</div>
-
-										<div class="post">
-											 <figure class="post-thumb"><img src="{{asset('public/client/images/resource/news-thumb-2.jpg')}}" alt="">
-											 </figure>
-											 <h5 class="text"><a href="#">WE BUILD AND ACTIVATE BRANDS INSIGHT</a></h5>
-										</div>
-
-										<div class="post">
-											 <figure class="post-thumb"><img src="{{asset('public/client/images/resource/news-thumb-3.jpg')}}" alt="">
-											 </figure>
-											 <h5 class="text"><a href="#">A DEEP UNDERSTANDING OF OUR AUDIENCE</a></h5>
-										</div>
-
-								  </div>
-							 </div>
-
-							 <div class="sidebar-widget archives">
-								  <div class="widget-inner">
-										<div class="sidebar-title">
-											 <h4>Categories</h4>
-										</div>
-										<ul>
-											 <li><a href="blog.html">Business (16)</a></li>
-											 <li class="active"><a href="blog.html">Introductions (14)</a></li>
-											 <li><a href="blog.html">One Page Template (33)</a></li>
-											 <li><a href="blog.html">Parallax Effects (29)</a></li>
-											 <li><a href="blog.html">New Technologies (8)</a></li>
-											 <li><a href="blog.html">Video Backgrounds (6)</a></li>
+										<a class="link" href="#"><i class="fa fa-link"></i></a>
+									</div>
+									<div class="entry-content">
+										<div class="post-single-meta"> <i class="fa fa-folder-o"></i> <span class="categories-links"><a href="#" rel="category tag">By Bcosul</a></span></div>
+										<h5 class="entry-title"><a href="#" rel="bookmark">Capitalize on low hanging fruit to identify a ballpark test</a></h5>
+										<ul class="entry-meta list-inline">
+											<li class="list-inline-item posted-date"><i class="fa fa-calendar-o"></i> <a href="#" rel="bookmark"><time class="entry-date published updated" datetime="2019-05-14T05:20:51+00:00">May 14, 2020</time></a></li>
+											<li class="list-inline-item categories"><i class="fa fa-folder-o"></i> <span class="categories-links"><a href="#" rel="category tag">Repair</a>, <a href="#" rel="category tag">Computer</a></span></li>
 										</ul>
-								  </div>
-							 </div>
-
-							 <div class="sidebar-widget popular-tags">
-								  <div class="widget-inner">
-										<div class="sidebar-title">
-											 <h4>Tags</h4>
+										<div class="post-excerpt">
+											<div class="mascot-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis....</div>
 										</div>
-										<div class="tags-list clearfix">
-											 <a href="#">Business</a>, <a href="#">Agency</a>, <a href="#">Technology</a>,<a
-												  href="#">Parallax</a>, <a href="#">Innovative</a>, <a
-												  href="#">Professional</a>,<a href="#">Experience</a>
+										<div class="post-btn-readmore"> <a href="#" class="btn btn-plain-text-with-arrow btn-round"> View Details </a></div>
+										<div class="clearfix"></div>
+									</div>
+								</article>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-6 col-xl-4">
+							<div class="tm-sc tm-sc-blog tm-sc-blog-masonry blog-style1-current-theme mb-lg-30">
+								<article class="post type-post status-publish format-standard has-post-thumbnail">
+									<div class="entry-header">
+										<div class="post-thumb lightgallery-lightbox">
+											<div class="post-thumb-inner">
+												<div class="thumb"> <img src="images/blog/2.jpg" alt="Image"/></div>
+											</div>
 										</div>
-								  </div>
-							 </div>
-
-							 <div class="sidebar-widget recent-comments">
-								  <div class="widget-inner">
-										<div class="sidebar-title">
-											 <h4>Comments</h4>
+										<a class="link" href="#"><i class="fa fa-link"></i></a>
+									</div>
+									<div class="entry-content">
+										<div class="post-single-meta"> <i class="fa fa-folder-o"></i> <span class="categories-links"><a href="#" rel="category tag">By Bcosul</a></span></div>
+										<h5 class="entry-title"><a href="#" rel="bookmark">Provide you with 5 creative on a common template</a></h5>
+										<ul class="entry-meta list-inline">
+											<li class="list-inline-item posted-date"><i class="fa fa-calendar-o"></i> <a href="#" rel="bookmark"><time class="entry-date published updated" datetime="2019-05-14T05:20:51+00:00">Jun 24, 2020</time></a></li>
+											<li class="list-inline-item categories"><i class="fa fa-folder-o"></i> <span class="categories-links"><a href="#" rel="category tag">Computer</a>, <a href="#" rel="category tag">Repair</a></span></li>
+										</ul>
+										<div class="post-excerpt">
+											<div class="mascot-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis....</div>
 										</div>
-
-										<div class="comment">
-											 <div class="icon">
-												  <span class="flaticon-speech-bubble-2"></span>
-											 </div>
-											 <h5 class="text"><a href="#">A Wordpress Commenter on Launch New Mobile App</a>
-											 </h5>
+										<div class="post-btn-readmore"> <a href="#" class="btn btn-plain-text-with-arrow btn-round"> View Details </a></div>
+										<div class="clearfix"></div>
+									</div>
+								</article>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-6 col-xl-4">
+							<div class="tm-sc tm-sc-blog tm-sc-blog-masonry blog-style1-current-theme">
+								<article class="post type-post status-publish format-standard has-post-thumbnail">
+									<div class="entry-header">
+										<div class="post-thumb lightgallery-lightbox">
+											<div class="post-thumb-inner">
+												<div class="thumb"> <img src="images/blog/3.jpg" alt="Image"/></div>
+											</div>
 										</div>
-
-										<div class="comment">
-											 <div class="icon">
-												  <span class="flaticon-speech-bubble-2"></span>
-											 </div>
-											 <h5 class="text"><a href="#">John Doe on Template: <br>Comments</a></h5>
+										<a class="link" href="#"><i class="fa fa-link"></i></a>
+									</div>
+									<div class="entry-content">
+										<div class="post-single-meta"> <i class="fa fa-folder-o"></i> <span class="categories-links"><a href="#" rel="category tag">By Bcosul</a></span></div>
+										<h5 class="entry-title"><a href="#" rel="bookmark">Explain why they work and what makes people click them</a></h5>
+										<ul class="entry-meta list-inline">
+											<li class="list-inline-item posted-date"><i class="fa fa-calendar-o"></i> <a href="#" rel="bookmark"><time class="entry-date published updated" datetime="2019-05-14T05:20:51+00:00">May 21, 2020</time></a></li>
+											<li class="list-inline-item categories"><i class="fa fa-folder-o"></i> <span class="categories-links"><a href="#" rel="category tag">Computer</a>, <a href="#" rel="category tag">Repair</a></span></li>
+										</ul>
+										<div class="post-excerpt">
+											<div class="mascot-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis....</div>
 										</div>
-
-										<div class="comment">
-											 <div class="icon">
-												  <span class="flaticon-speech-bubble-2"></span>
-											 </div>
-											 <h5 class="text"><a href="#">A Wordpress Commenter on Launch New Mobile App</a>
-											 </h5>
-										</div>
-
-										<div class="comment">
-											 <div class="icon">
-												  <span class="flaticon-speech-bubble-2"></span>
-											 </div>
-											 <h5 class="text"><a href="#">John Doe on Template: <br>Comments</a></h5>
-										</div>
-
-								  </div>
-							 </div>
-
-
-						</aside>
-				  </div>
-
-			 </div>
-		</div>
-  	</div>
-
-	@include('client.partials.action')
+										<div class="post-btn-readmore"> <a href="#" class="btn btn-plain-text-with-arrow btn-round"> View Details </a></div>
+										<div class="clearfix"></div>
+									</div>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Divider -->
+	</div>
+	<!-- end main-content -->	
 
 @endsection
 
