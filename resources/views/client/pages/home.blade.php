@@ -23,8 +23,10 @@
 					<rs-module-wrap id="rev_slider_1_1_wrapper" data-alias="home-slider" data-source="gallery" style="background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
 						<rs-module id="rev_slider_1_1" style="display:none;" data-version="6.0.8">
 							<rs-slides>
+
+							@foreach($banners as $banner)
 								<rs-slide data-key="rs-1" data-title="Slide 1" data-thumb="images/bg/as1.jpg" data-anim="ei:d;eo:d;s:d;r:0;t:slotslide-horizontal;sl:d;">
-									<img src="{{asset('public/client/images/bg/as1.jpg')}}" title="s6.jpg" width="1920" height="1280" data-bg="p:center center;" data-parallax="off" class="rev-slidebg" data-no-retina>
+									<img src="{{$banner->feature_image}}" title="s6.jpg" width="1920" height="1280" data-bg="p:center center;" data-parallax="off" class="rev-slidebg" data-no-retina>
 									<rs-layer
 										id="slider-1-slide-1-layer-14" 
 										class="text-theme-colored1 rs-pxl-1"
@@ -58,30 +60,14 @@
 										data-frame_1="st:1700;sp:1000;"
 										data-frame_999="x:-50,-38,-28,-17;o:0;st:w;sp:1000;"
 										style="z-index:12;font-family:Poppins;"
-									>Trusted Repair Services 
+									>{{$banner->title}}
 									</rs-layer>
 
-									<rs-layer
-										id="slider-1-slide-1-layer-20" 
-										class="rev-btn rs-pxl-1"
-										data-type="button"
-										data-rsp_ch="on"
-										data-xy="x:l,l,l,c;xo:50px,50px,35px,0;y:m,m,m,t;yo:140px,131px,131px,393px;"
-										data-text="w:normal;s:20,15,16,16;f:left,none,none,none;c:both,none,none,none;l:40,30,22,13;fw:500;a:left,left,left,center;"
-										data-flcr="f:left,none,none,none;c:both,none,none,none;"
-										data-dim="minh:0px,none,none,none;"
-										data-padding="t:10,8,15,16;r:60,46,48,38;b:10,8,15,16;l:60,46,48,38;"
-										data-border="bor:5px,5px,5px,5px;"
-										data-frame_0="y:bottom;"
-										data-frame_1="st:2170;sp:1000;sR:2170;"
-										data-frame_999="o:0;st:w;sp:1500;sR:5830;"
-										data-frame_hover="bgc:#00c3ed;bor:5px,5px,5px,5px;bri:120%;"
-										style="z-index:11;background-color:#00c3ed;font-family:Roboto;"
-									>Read More 
-									</rs-layer>
+									
 
 								</rs-slide>
-								<rs-slide data-key="rs-2" data-title="Slide 1" data-thumb="images/bg/as02.jpg" data-anim="ei:d;eo:d;s:d;r:0;t:slotslide-horizontal;sl:d;">
+							@endforeach
+								<!-- <rs-slide data-key="rs-2" data-title="Slide 1" data-thumb="images/bg/as02.jpg" data-anim="ei:d;eo:d;s:d;r:0;t:slotslide-horizontal;sl:d;">
 									<img src="{{asset('public/client/images/bg/as02.jpg')}}" title="s4.jpg" width="1920" height="1280" data-parallax="off" class="rev-slidebg" data-no-retina>
 
 									<rs-layer
@@ -120,24 +106,7 @@
 									>Trusted Repair Services 
 									</rs-layer>
 
-									<rs-layer
-										id="slider-1-slide-2-layer-20" 
-										class="rev-btn rs-pxl-1"
-										data-type="button"
-										data-rsp_ch="on"
-										data-xy="x:c;y:m,m,m,t;yo:150px,131px,131px,393px;"
-										data-text="w:normal;s:20,15,16,16;f:left,none,none,none;c:both,none,none,none;l:40,30,22,13;fw:500;a:center;"
-										data-flcr="f:left,none,none,none;c:both,none,none,none;"
-										data-dim="minh:0px,none,none,none;"
-										data-padding="t:10,8,15,16;r:60,46,48,38;b:10,8,15,16;l:60,46,48,38;"
-										data-border="bor:5px,5px,5px,5px;"
-										data-frame_0="y:bottom;"
-										data-frame_1="st:2170;sp:1000;sR:2170;"
-										data-frame_999="o:0;st:w;sp:1500;sR:5830;"
-										data-frame_hover="bgc:#00c3ed;bor:5px,5px,5px,5px;bri:120%;"
-										style="z-index:11;background-color:#00c3ed;font-family:Roboto;"
-									>Read More 
-									</rs-layer>
+									
 								</rs-slide>
 								<rs-slide data-key="rs-3" data-title="Slide 1" data-thumb="images/bg/as3.jpg" data-anim="ei:d;eo:d;s:d;r:0;t:slotslide-horizontal;sl:d;">
 									<img src="{{asset('public/client/images/bg/as3.jpg')}}" title="s5.jpg" width="1920" height="1280" data-parallax="off" class="rev-slidebg" data-no-retina>
@@ -178,25 +147,9 @@
 									>Trusted Repair Services 
 									</rs-layer>
 
-									<rs-layer
-										id="slider-1-slide-3-layer-20" 
-										class="rev-btn rs-pxl-1"
-										data-type="button"
-										data-rsp_ch="on"
-										data-xy="x:r,r,r,c;xo:50px,50px,35px,0;y:m,m,m,t;yo:140px,131px,131px,393px;"
-										data-text="w:normal;s:20,15,16,16;f:left,none,none,none;c:both,none,none,none;l:40,30,22,13;fw:500;a:left,left,left,center;"
-										data-flcr="f:left,none,none,none;c:both,none,none,none;"
-										data-dim="minh:0px,none,none,none;"
-										data-padding="t:10,8,15,16;r:60,46,48,38;b:10,8,15,16;l:60,46,48,38;"
-										data-border="bor:5px,5px,5px,5px;"
-										data-frame_0="y:bottom;"
-										data-frame_1="st:2170;sp:1000;sR:2170;"
-										data-frame_999="o:0;st:w;sp:1500;sR:5830;"
-										data-frame_hover="bgc:#00c3ed;bor:5px,5px,5px,5px;bri:120%;"
-										style="z-index:11;background-color:#00c3ed;font-family:Roboto;"
-									>Read More 
+									
 									</rs-layer>
-								</rs-slide>
+								</rs-slide> -->
 							</rs-slides>
 							<rs-static-layers>
 							</rs-static-layers>
@@ -225,7 +178,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="btn-view-details mt-0 p-20 bg-theme-colored1"> <a href="#" class="btn btn-plain-text-with-arrow btn-sm text-white"> View Details </a></div>
+							<div class="btn-view-details mt-0 p-20 bg-theme-colored1"> <a href="{{route('app.service')}}" class="btn btn-plain-text-with-arrow btn-sm text-white"> View Details </a></div>
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-6 col-xl-3">
@@ -239,7 +192,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="btn-view-details mt-0 p-20 bg-theme-colored2"> <a href="#" class="btn btn-plain-text-with-arrow btn-sm text-white"> View Details </a></div>
+							<div class="btn-view-details mt-0 p-20 bg-theme-colored2"> <a href="{{route('app.service')}}" class="btn btn-plain-text-with-arrow btn-sm text-white"> View Details </a></div>
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-6 col-xl-3">
@@ -253,7 +206,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="btn-view-details mt-0 p-20 bg-theme-colored1"> <a href="#" class="btn btn-plain-text-with-arrow btn-sm text-white"> View Details </a></div>
+							<div class="btn-view-details mt-0 p-20 bg-theme-colored1"> <a href="{{route('app.service')}}" class="btn btn-plain-text-with-arrow btn-sm text-white"> View Details </a></div>
 						</div>
 					</div>
 					<div class="col-md-6 col-lg-6 col-xl-3">
@@ -267,7 +220,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="btn-view-details mt-0 p-20 bg-theme-colored2"> <a href="#" class="btn btn-plain-text-with-arrow btn-sm text-white"> View Details </a></div>
+							<div class="btn-view-details mt-0 p-20 bg-theme-colored2"> <a href="{{route('app.service')}}" class="btn btn-plain-text-with-arrow btn-sm text-white"> View Details </a></div>
 						</div>
 					</div>
 				</div>
@@ -276,7 +229,7 @@
 	</section>
 
 	<!-- Section: funfact -->
-	<section class="layer-overlay overlay-theme-colored2-9 section-typo-light text-center" data-tm-bg-img="images/bg/as02.jpg">
+	<!-- <section class="layer-overlay overlay-theme-colored2-9 section-typo-light text-center" data-tm-bg-img="images/bg/as02.jpg">
 		<div class="container">
 			<div class="section-content">
 				<div class="row">
@@ -327,7 +280,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!-- End Divider -->
 
 	<!-- Section: Contact -->
@@ -352,44 +305,57 @@
 										</div>
 										<div role="form" class="wpcf7" id="wpcf7-f452-p311-o1" lang="en-US" dir="ltr">
 											<div class="screen-reader-response"></div>
-											<form action="" method="post" class="wpcf7-form" novalidate="novalidate">
-												<div> <input type="hidden" name="_wpcf7" value="452" /> <input type="hidden" name="_wpcf7_version" value="5.1.1" /> <input type="hidden" name="_wpcf7_locale" value="en_US" /> <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f452-p311-o1" /> <input type="hidden" name="_wpcf7_container_post" value="311" /> <input type="hidden" name="g-recaptcha-response" value="" /></div>
+
+
+											<form action="{{route('app.inquire')}}" method="post" class="wpcf7-form" novalidate="novalidate">
+												@csrf
 												<div class="tm-contact-form-transparent pr-0">
 													<div class="row">
-														<div class="col-md-6"> 
+														<div class="col-md-12"> 
 															<span class="wpcf7-form-control-wrap your-name">
-																<input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Name*" />
+																<input type="text" name="name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Name*" />
 															</span>
 														</div>
-														<div class="col-md-6"> 
+														<div class="col-md-12"> 
 															<span class="wpcf7-form-control-wrap your-email">
-																<input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email*" />
+																<input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email*" />
 															</span>
 														</div>
-														<div class="col-md-6"> 
+														<div class="col-md-12"> 
 															<span class="wpcf7-form-control-wrap your-phone">
-																<input type="text" name="your-phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Phone*" />
+																<input type="text" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Phone Number*" />
 															</span>
 														</div>
-														<div class="col-md-6"> 
+														
+														<div class="col-md-12"> 
 															<span class="wpcf7-form-control-wrap your-subject">
-																<input type="text" name="your-subject" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Subject" />
-															</span>
-														</div>
-														<div class="col-md-6"> 
-															<span class="wpcf7-form-control-wrap your-subject">
-																<select name="" id="" >
-																	<option value="" class="wpcf7-form-control wpcf7-text">Select your Phone</option>
+																<select name="model" id="" >
+																	<option value="" class="wpcf7-form-control wpcf7-text">Select your Phone Model</option>
 																	<option value="" class="wpcf7-form-control wpcf7-text">IPhone-10</option>
 																	<option value="" class="wpcf7-form-control wpcf7-text">IPhone-11</option>
 																</select>
 															</span>
 														</div>
+
 														<div class="col-md-12"> 
-															<span class="wpcf7-form-control-wrap textarea">
-																<textarea name="textarea" cols="40" rows="3" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Message*"></textarea>
+															<span class="wpcf7-form-control-wrap your-subject">
+																<select name="issue" id="" >
+																	<option value="" class="wpcf7-form-control wpcf7-text">Phone Issue</option>
+																	<option value="" class="wpcf7-form-control wpcf7-text">IPhone-10</option>
+																	<option value="" class="wpcf7-form-control wpcf7-text">IPhone-11</option>
+																</select>
 															</span>
 														</div>
+
+
+														<div class="col-md-12"> 
+															<span class="wpcf7-form-control-wrap textarea">
+																<textarea name="message" cols="40" rows="3" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Message*"></textarea>
+															</span>
+														</div>
+
+														@captcha
+
 														<div class="col-md-12">
 															<input type="submit" value="Submit Now" class="wpcf7-form-control wpcf7-submit btn btn-theme-colored1 btn-round" />
 														</div>
@@ -397,6 +363,8 @@
 												</div>
 												<div class="wpcf7-response-output wpcf7-display-none"></div>
 											</form>
+
+
 										</div>
 									</div>
 								</div>
@@ -444,109 +412,7 @@
 	
 
 	<!-- Section: Service -->
-	<section class="bg-img-no-repeat" data-tm-bg-img="{{asset('public/client/images/bg/bg-shape-bconsul1.png')}}">
-		<div class="container pt-90">
-			<div class="section-title">
-				<div class="row justify-content-md-center">
-					<div class="col-md-8">
-						<div class="text-center mb-60">
-							<div class="tm-sc tm-sc-section-title section-title section-title-style1 text-center line-bottom-style4-attached-double-lines1">
-								<div class="title-wrapper">
-									<h2 class="title"> <span class="">Our </span> <span class="text-theme-colored1">Service</span> Areas</h2>
-									<div class="title-seperator-line"></div>
-									<div class="paragraph">
-									<p>Explore Our Completed Services! Consectetur adipiscing elitt elit tellus, luctus pulvinar dapibus leoconsectetur luctus nec.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="section-content">
-				<div class="row">
-					<div class="col-md-6 col-lg-6 col-xl-4">
-						<div class="services-block mb-50">
-							<div class="inner-box">
-								<div class="thumb">
-									<img src="{{asset('public/client/images/service/1.jpg')}}" alt=""/>
-								</div>
-								<div class="content">
-									<h4><a href="#">Laptop Repair</a></h4>
-									<p>Leverage agile frameworks to provide a robust synopsis for high level overviews.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-6 col-xl-4">
-						<div class="services-block mb-50">
-							<div class="inner-box">
-								<div class="thumb">
-									<img src="{{asset('public/client/images/service/2.jpg')}}" alt=""/>
-								</div>
-								<div class="content">
-									<h4><a href="#">Computer Repair</a></h4>
-									<p>Leverage agile frameworks to provide a robust synopsis for high level overviews.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-6 col-xl-4">
-						<div class="services-block mb-50">
-							<div class="inner-box">
-								<div class="thumb">
-									<img src="{{asset('public/client/images/service/3.jpg')}}" alt=""/>
-								</div>
-								<div class="content">
-									<h4><a href="#">Data Recovery</a></h4>
-									<p>Leverage agile frameworks to provide a robust synopsis for high level overviews.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-6 col-xl-4">
-						<div class="services-block mb-lg-50">
-							<div class="inner-box">
-								<div class="thumb">
-									<img src="{{asset('public/client/images/service/4.jpg')}}" alt=""/>
-								</div>
-								<div class="content">
-									<h4><a href="#">Phone Unlock</a></h4>
-									<p>Leverage agile frameworks to provide a robust synopsis for high level overviews.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-6 col-xl-4">
-						<div class="services-block mb-lg-50">
-							<div class="inner-box">
-								<div class="thumb">
-									<img src="{{asset('public/client/images/service/5.jpg')}}" alt=""/>
-								</div>
-								<div class="content">
-									<h4><a href="#">Mobile Repair</a></h4>
-									<p>Leverage agile frameworks to provide a robust synopsis for high level overviews.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-6 col-xl-4">
-						<div class="services-block mb-lg-50">
-							<div class="inner-box">
-								<div class="thumb">
-									<img src="{{asset('public/client/images/service/6.jpg')}}" alt=""/>
-								</div>
-								<div class="content">
-									<h4><a href="#">Hardware Update</a></h4>
-									<p>Leverage agile frameworks to provide a robust synopsis for high level overviews.</p>
-								</div>
-							</div>
-						</div>					
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	@include('client.partials.services')
 	<!-- End Divider -->
 
 	<!-- Section: Who We Are -->
@@ -965,141 +831,14 @@
 	</section> -->
 	<!-- End Divider -->
 
-	
-
-	
 	<!-- Section: News & Updates-->
-	<section>
-		<div class="container pt-90">
-			<div class="section-title">
-				<div class="row justify-content-md-center">
-					<div class="col-md-8">
-						<div class="text-center mb-60">
-							<div class="tm-sc tm-sc-section-title section-title section-title-style1 text-center line-bottom-style4-attached-double-lines1">
-								<div class="title-wrapper">
-									<h2 class="title"> <span class="">Our </span> <span class="text-theme-colored1">Latest</span> News</h2>
-									<div class="title-seperator-line"></div>
-									<div class="paragraph">
-									<p>Explore Our Completed Services! Consectetur adipiscing elitt elit tellus, luctus pulvinar dapibus leoconsectetur luctus nec.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="section-content">
-				<div class="row">
-					<div class="col-md-6 col-lg-6 col-xl-4">
-						<div class="tm-sc tm-sc-blog tm-sc-blog-masonry blog-style1-current-theme mb-lg-30">
-							<article class="post type-post status-publish format-standard has-post-thumbnail">
-								<div class="entry-header">
-									<div class="post-thumb lightgallery-lightbox">
-										<div class="post-thumb-inner">
-											<div class="thumb"> <img src="{{asset('public/client/images/blog/1.jpg')}}" alt="Image"/></div>
-										</div>
-									</div>
-									<a class="link" href="#"><i class="fa fa-link"></i></a>
-								</div>
-								<div class="entry-content">
-									<div class="post-single-meta"> <i class="fa fa-folder-o"></i> <span class="categories-links"><a href="#" rel="category tag">By Bcosul</a></span></div>
-									<h5 class="entry-title"><a href="#" rel="bookmark">Capitalize on low hanging fruit to identify a ballpark test</a></h5>
-									<ul class="entry-meta list-inline">
-										<li class="list-inline-item posted-date"><i class="fa fa-calendar-o"></i> <a href="#" rel="bookmark"><time class="entry-date published updated" datetime="2019-05-14T05:20:51+00:00">May 14, 2020</time></a></li>
-										<li class="list-inline-item categories"><i class="fa fa-folder-o"></i> <span class="categories-links"><a href="#" rel="category tag">Repair</a>, <a href="#" rel="category tag">Computer</a></span></li>
-									</ul>
-									<div class="post-excerpt">
-										<div class="mascot-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis....</div>
-									</div>
-									<div class="post-btn-readmore"> <a href="#" class="btn btn-plain-text-with-arrow btn-round"> View Details </a></div>
-									<div class="clearfix"></div>
-								</div>
-							</article>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-6 col-xl-4">
-						<div class="tm-sc tm-sc-blog tm-sc-blog-masonry blog-style1-current-theme mb-lg-30">
-							<article class="post type-post status-publish format-standard has-post-thumbnail">
-								<div class="entry-header">
-									<div class="post-thumb lightgallery-lightbox">
-										<div class="post-thumb-inner">
-											<div class="thumb"> <img src="{{asset('public/client/images/blog/1.jpg')}}" alt="Image"/></div>
-										</div>
-									</div>
-									<a class="link" href="#"><i class="fa fa-link"></i></a>
-								</div>
-								<div class="entry-content">
-									<div class="post-single-meta"> <i class="fa fa-folder-o"></i> <span class="categories-links"><a href="#" rel="category tag">By Bcosul</a></span></div>
-									<h5 class="entry-title"><a href="#" rel="bookmark">Provide you with 5 creative on a common template</a></h5>
-									<ul class="entry-meta list-inline">
-										<li class="list-inline-item posted-date"><i class="fa fa-calendar-o"></i> <a href="#" rel="bookmark"><time class="entry-date published updated" datetime="2019-05-14T05:20:51+00:00">Jun 24, 2020</time></a></li>
-										<li class="list-inline-item categories"><i class="fa fa-folder-o"></i> <span class="categories-links"><a href="#" rel="category tag">Computer</a>, <a href="#" rel="category tag">Repair</a></span></li>
-									</ul>
-									<div class="post-excerpt">
-										<div class="mascot-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis....</div>
-									</div>
-									<div class="post-btn-readmore"> <a href="#" class="btn btn-plain-text-with-arrow btn-round"> View Details </a></div>
-									<div class="clearfix"></div>
-								</div>
-							</article>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-6 col-xl-4">
-						<div class="tm-sc tm-sc-blog tm-sc-blog-masonry blog-style1-current-theme">
-							<article class="post type-post status-publish format-standard has-post-thumbnail">
-								<div class="entry-header">
-									<div class="post-thumb lightgallery-lightbox">
-										<div class="post-thumb-inner">
-											<div class="thumb"> <img src="{{asset('public/client/images/blog/1.jpg')}}" alt="Image"/></div>
-										</div>
-									</div>
-									<a class="link" href="#"><i class="fa fa-link"></i></a>
-								</div>
-								<div class="entry-content">
-									<div class="post-single-meta"> <i class="fa fa-folder-o"></i> <span class="categories-links"><a href="#" rel="category tag">By Bcosul</a></span></div>
-									<h5 class="entry-title"><a href="#" rel="bookmark">Explain why they work and what makes people click them</a></h5>
-									<ul class="entry-meta list-inline">
-										<li class="list-inline-item posted-date"><i class="fa fa-calendar-o"></i> <a href="#" rel="bookmark"><time class="entry-date published updated" datetime="2019-05-14T05:20:51+00:00">May 21, 2020</time></a></li>
-										<li class="list-inline-item categories"><i class="fa fa-folder-o"></i> <span class="categories-links"><a href="#" rel="category tag">Computer</a>, <a href="#" rel="category tag">Repair</a></span></li>
-									</ul>
-									<div class="post-excerpt">
-										<div class="mascot-post-excerpt">Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero dolor nobis....</div>
-									</div>
-									<div class="post-btn-readmore"> <a href="#" class="btn btn-plain-text-with-arrow btn-round"> View Details </a></div>
-									<div class="clearfix"></div>
-								</div>
-							</article>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	@include('client.partials.blogs')
 	<!-- End Divider -->
 
-	<!-- Start  Divider -->
-	<section class="bg-theme-colored2">
-		<div class="container pt-60 pb-60">
-			<div class="section-content">
-				<div class="row">
-					<div class="col-sm-12">
-						<div class="tm-sc tm-sc-clients tm-sc-clients-carousel owl-dots-light-skin owl-dots-center clients-animation-zoom">
-							<div class="owl-carousel owl-theme tm-owl-carousel-6col" data-autoplay="true" data-loop="true" data-duration="6000" data-smartspeed="300" data-margin="30" data-stagepadding="0" data-laptop="2">
-								<div class="item"> <a target="_blank" href="#"> <img src='{{asset('public/client/images/phones/apple.jpg')}}' alt='Image' /> </a></div>
-								<div class="item"> <a target="_blank" href="#"> <img src='{{asset('public/client/images/phones/apple.jpg')}}' alt='Image' /> </a></div>
-								<div class="item"> <a target="_blank" href="#"> <img src='{{asset('public/client/images/phones/apple.jpg')}}' alt='Image' /> </a></div>
-								<div class="item"> <a target="_blank" href="#"> <img src='{{asset('public/client/images/phones/apple.jpg')}}' alt='Image' /> </a></div>
-								<div class="item"> <a target="_blank" href="#"> <img src='{{asset('public/client/images/phones/apple.jpg')}}' alt='Image' /> </a></div>
-								<div class="item"> <a target="_blank" href="#"> <img src='{{asset('public/client/images/phones/apple.jpg')}}' alt='Image' /> </a></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	<!-- Section: Products Didplay -->
+	@include('client.partials.products')
 	<!-- End Divider -->
-   
+
 
 	    
 @endsection

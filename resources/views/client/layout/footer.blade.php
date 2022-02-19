@@ -3,7 +3,7 @@
             <div class="footer-widget-area">
                 <div class="container pt-90 pb-60">
                     <div class="row">
-                        <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="col-md-6 col-lg-6 col-xl-4">
                             <div id="tm_widget_contact_info-1" class="split-nav-menu clearfix widget widget-contact-info clearfix mb-20">
                                 <div class="tm-widget tm-widget-contact-info contact-info contact-info-style1  contact-icon-theme-colored1">
                                     <div class="thumb">
@@ -21,10 +21,12 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="col-md-6 col-lg-6 col-xl-4">
                             <div id="tm_widget_blog_list-1" class="split-nav-menu clearfix widget widget-blog-list clearfix">
                                 <h4 class="widget-title widget-title-line-bottom line-bottom-footer-widget line-bottom-theme-colored1">Latest News</h4>
                                 <div class="tm-widget tm-widget-blog-list "> 
+
+                                   
                                     <!-- the loop -->
                                     <article class="post media-post clearfix"> <a class="post-thumb" href="#"><img width="100" height="70" src="{{asset('public/client/images/blog/1.jpg')}}" class="" alt="" /></a>
                                         <div class="post-right">
@@ -51,25 +53,13 @@
                                         </div>
                                     </article>
                                     <!-- end of the loop --> 
+                                 
+
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-6 col-xl-3">
-                            <div id="nav_menu-1" class="widget widget_nav_menu">
-                                <h4 class="widget-title widget-title-line-bottom line-bottom-footer-widget line-bottom-theme-colored1">Services</h4>
-                                <div class="menu-service-nav-menu-container">
-                                    <ul id="menu-service-nav-menu" class="menu">
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-services menu-item-20545"><a href="#">Kitchen Remodel</a></li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-services menu-item-20546"><a href="#">Home Renovation</a></li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-services menu-item-20547"><a href="#">Home Repair</a></li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-services menu-item-20548"><a href="#">Painting</a></li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-services menu-item-20549"><a href="#/">Windows & Doors</a></li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-services menu-item-20550"><a href="#">Bathroom Remodel</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-6 col-xl-3">
+                       
+                        <div class="col-md-6 col-lg-6 col-xl-4">
                             <div id="tm_widget_opening_hours_compressed-1" class="split-nav-menu clearfix widget widget-opening-hours-compressed clearfix">
                                 <h4 class="widget-title widget-title-line-bottom line-bottom-footer-widget line-bottom-theme-colored1">Opening Hours</h4>
                                 <ul class="tm-widget tm-widget-opening-hours tm-widget-opening-hours-compressed opening-hours border-dark">

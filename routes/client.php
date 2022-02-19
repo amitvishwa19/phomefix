@@ -32,8 +32,8 @@ Route::get('/upload',function(){
 
 
 //Devlomatix Solutions & Devlomatix Games policy
-Route::get('/games/privacy', [PolicyController::class, 'DevlomatixGamesPrivacy'])->name('games.privacy');
-Route::get('/games/terms', [PolicyController::class, 'DevlomatixGamesTerms'])->name('games.terms');
+////Route::get('/games/privacy', [PolicyController::class, 'DevlomatixGamesPrivacy'])->name('games.privacy');
+//Route::get('/games/terms', [PolicyController::class, 'DevlomatixGamesTerms'])->name('games.terms');
 
 
 Route::get('/privacy', [PolicyController::class, 'DevlomatixSolutionsPrivacy'])->name('privacy');

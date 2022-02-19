@@ -17,15 +17,41 @@ class ClientController extends Controller
 {
     public function home(Request $request)
     {
-        //$value = $request->cookie('subscription');
-        //dd(request()->cookie() );
-        return view('client.pages.home');
+        $banners = Post::whereHas('categories', function($q)
+        {
+            $q->where('slug', '=', 'banner');
+        })->get();
+
+        $services = Post::whereHas('categories', function($q)
+        {
+            $q->where('slug', '=', 'services');
+        })->get();
+
+        $blogs = Post::whereHas('categories', function($q)
+        {
+            $q->where('slug', '=', 'blogs');
+        })->get();
+
+        $products = Post::whereHas('categories', function($q)
+        {
+            $q->where('slug', '=', 'products');
+        })->get();
+
+        
+        return view('client.pages.home')->with('banners',$banners)
+                                        ->with('services',$services)
+                                        ->with('blogs',$blogs)
+                                        ->with('products',$products);
     }
 
     public function blogs()
     {
-        $posts = Post::where('status','published')->get();
-        return view('client.pages.blogs',compact('posts'));
+        $blogs = Post::whereHas('categories', function($q)
+        {
+            $q->where('slug', '=', 'blogs');
+        })->get();
+        
+        return view('client.pages.blogs')->with('blogs',$blogs);
     }
 
     public function blog()
@@ -37,13 +63,32 @@ class ClientController extends Controller
     public function about()
     {
 
-        return view('client.pages.about');
+        $services = Post::whereHas('categories', function($q)
+        {
+            $q->where('slug', '=', 'services');
+        })->get();
+
+        $products = Post::whereHas('categories', function($q)
+        {
+            $q->where('slug', '=', 'products');
+        })->get();
+
+        $about = Post::whereHas('categories', function($q)
+        {
+            $q->where('slug', '=', 'about');
+        })->get();
+
+        return view('client.pages.about')->with('services',$services)->with('products',$products)->with('about',$about);
     }
 
     public function service()
     {
+        $services = Post::whereHas('categories', function($q)
+        {
+            $q->where('slug', '=', 'services');
+        })->get();
 
-        return view('client.pages.service');
+        return view('client.pages.service')->with('services',$services);
     }
 
     public function contact()
@@ -77,6 +122,7 @@ class ClientController extends Controller
     public function inquiry(Request $request)
     {
 
+        dd($request->all());
         $validate = $request->validate([
             'g-recaptcha-response' => 'required|captcha'
         ]);
