@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Client;
 
 use App\Models\Post;
+use App\Models\Category;
 use App\Models\Inquiry;
 use App\Events\InquiryEvent;
 use App\Models\Subscription;
@@ -36,6 +37,9 @@ class ClientController extends Controller
         {
             $q->where('slug', '=', 'products');
         })->get();
+
+
+        
 
         
         return view('client.pages.home')->with('banners',$banners)
@@ -122,7 +126,7 @@ class ClientController extends Controller
     public function inquiry(Request $request)
     {
 
-        dd($request->all());
+        //dd($request->all());
         $validate = $request->validate([
             'g-recaptcha-response' => 'required|captcha'
         ]);
@@ -131,7 +135,8 @@ class ClientController extends Controller
         $inquiry->name = $request->name;
         $inquiry->email = $request->email;
         $inquiry->phone = $request->phone;
-        $inquiry->subject = $request->subject;
+        $inquiry->phone_model = $request->model;
+        $inquiry->phone_issue = $request->issue;
         $inquiry->message = $request->message;
         $inquiry->save();
 

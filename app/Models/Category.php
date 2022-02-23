@@ -35,6 +35,11 @@ class Category extends Model
         return $this->belongsTo($this, 'parent_id');
     }
 
+    public function children()
+    {
+        return $this->hasMany($this, 'parent_id')->orderBy('order');
+    }
+
     public function child()
     {
         return $this->hasMany($this, 'parent_id')->orderBy('order');

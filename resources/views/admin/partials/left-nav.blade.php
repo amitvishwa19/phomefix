@@ -68,7 +68,7 @@
 
             <hr class="hr-dashed hr-menu">
 
-            <!-- <li>
+            <li>
                 <a href="javascript: void(0);"><i data-feather="key" class="align-self-center menu-icon"></i><span>Access Control</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
                 <ul class="nav-second-level" aria-expanded="false">
                     <li>
@@ -76,7 +76,7 @@
                             <i class="ti-control-record"></i>Users</a>
                     </li>
 
-                    <li>
+                    <!-- <li>
                         <a href="{{route('role.index')}}">
                             <i class="ti-control-record"></i>Roles</a>
                     </li>
@@ -84,10 +84,10 @@
                     <li>
                         <a href="{{route('permission.index')}}">
                             <i class="ti-control-record"></i>Permissions</a>
-                    </li>
+                    </li> -->
 
                 </ul>
-            </li> -->
+            </li>
 
 
 
