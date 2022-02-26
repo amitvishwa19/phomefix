@@ -46,20 +46,15 @@
                 </a>
             </li>
          
-            <hr class="hr-dashed hr-menu">
-
+            
 
             <li>
-                <a href="{{route('subscription.index')}}">
-                    <i data-feather="thumbs-up" class="align-self-center menu-icon"></i><span>Subscriptions</span>
+                <a href="{{route('option.index')}}">
+                    <i data-feather="zap" class="align-self-center menu-icon"></i><span>Options</span>
                 </a>
             </li>
 
-            <li>
-                <a href="{{route('inquiry.index')}}">
-                    <i data-feather="zap" class="align-self-center menu-icon"></i><span>Inquiries</span>
-                </a>
-            </li>
+            
 
            
 
@@ -95,17 +90,17 @@
 
             
 
-            <!-- <li>
+            <li>
                 <a href="{{route('activity.index')}}">
                     <i data-feather="activity" class="align-self-center menu-icon"></i><span>Activity Logs</span>
                 </a>
             </li>
 
-            <li>
+            <!-- <li>
                 <a href="{{route('admin.logs')}}">
                     <i data-feather="alert-triangle" class="align-self-center menu-icon"></i><span>Error Logs</span>
                 </a>
-            </li> -->
+            </li>  -->
 
             <li>
                 <a href="{{route('setting.index')}}">

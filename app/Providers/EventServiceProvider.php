@@ -24,6 +24,10 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\InquiryEvent' => [
             'App\Listeners\InquiryListner',
         ],
+        'App\Events\ServiceRequestEvent' => [
+            'App\Listeners\ServiceSenderListner',
+            'App\Listeners\ServiceOwnerListner',
+        ],
         'App\Events\RegisterEvent' => [
             'App\Listeners\RegisterListner',
         ],

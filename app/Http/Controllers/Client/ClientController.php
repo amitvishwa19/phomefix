@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Client;
 
 use App\Models\Post;
-use App\Models\Category;
+use App\Models\Option;
 use App\Models\Inquiry;
+use App\Models\Category;
 use App\Events\InquiryEvent;
 use App\Models\Subscription;
 use Illuminate\Http\Request;
 use App\Events\SubscriptionEvent;
+use App\Events\ServiceRequestEvent;
 use App\Services\AppMailingService;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -38,14 +40,15 @@ class ClientController extends Controller
             $q->where('slug', '=', 'products');
         })->get();
 
-
-        
-
+        $models = Option::where('type','model')->get();
+        $issues = Option::where('type','issue')->get();
         
         return view('client.pages.home')->with('banners',$banners)
                                         ->with('services',$services)
                                         ->with('blogs',$blogs)
-                                        ->with('products',$products);
+                                        ->with('products',$products)
+                                        ->with('models',$models)
+                                        ->with('issues',$issues);
     }
 
     public function blogs()
@@ -128,6 +131,11 @@ class ClientController extends Controller
 
         //dd($request->all());
         $validate = $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|max:255',
+            'phone' => 'required|max:255',
+            'model' => 'required|max:255',
+            'issue' => 'required|max:255',
             'g-recaptcha-response' => 'required|captcha'
         ]);
 
@@ -140,7 +148,9 @@ class ClientController extends Controller
         $inquiry->message = $request->message;
         $inquiry->save();
 
-        event(new InquiryEvent($request));
+        //event(new InquiryEvent($request));
+        event(new ServiceRequestEvent($request));
+
         return redirect() ->route('app.home');
     }
 

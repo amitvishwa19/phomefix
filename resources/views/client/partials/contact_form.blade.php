@@ -27,36 +27,63 @@
 													<div class="row">
 														<div class="col-md-12"> 
 															<span class="wpcf7-form-control-wrap your-name">
-																<input type="text" name="name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Name*" />
+																@if ($errors->has('name'))
+																	<span class="help-block">
+																		<strong><small>{{ $errors->first('name') }}</small></strong>
+																	</span>
+																@endif
+																<input type="text" name="name" value="" size="30" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"  placeholder="Name*" />
 															</span>
 														</div>
 														<div class="col-md-12"> 
 															<span class="wpcf7-form-control-wrap your-email">
-																<input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email*" />
+																@if ($errors->has('email'))
+																	<span class="help-block">
+																		<strong><small>{{ $errors->first('email') }}</small></strong>
+																	</span>
+																@endif
+																<input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"  placeholder="Email*" />
 															</span>
 														</div>
 														<div class="col-md-12"> 
 															<span class="wpcf7-form-control-wrap your-phone">
+																@if ($errors->has('phone'))
+																	<span class="help-block">
+																		<strong><small>{{ $errors->first('phone') }}</small></strong>
+																	</span>
+																@endif
 																<input type="text" name="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Phone Number*" />
 															</span>
 														</div>
 														
 														<div class="col-md-12"> 
 															<span class="wpcf7-form-control-wrap your-subject">
+																@if ($errors->has('model'))
+																	<span class="help-block">
+																		<strong><small>{{ $errors->first('model') }}</small></strong>
+																	</span>
+																@endif
 																<select name="model" id="" >
-																	<option value="" class="wpcf7-form-control wpcf7-text">Select your Phone Model</option>
-																	<option value="" class="wpcf7-form-control wpcf7-text">IPhone-10</option>
-																	<option value="" class="wpcf7-form-control wpcf7-text">IPhone-11</option>
+																	<option value="" class="wpcf7-form-control wpcf7-text">-Select your Phone Model-</option>
+																	@foreach($models as $model)
+																		<option value="{{$model->value}}" class="wpcf7-form-control wpcf7-text">{{$model->value}}</option>
+																	@endforeach
 																</select>
 															</span>
 														</div>
 
 														<div class="col-md-12"> 
 															<span class="wpcf7-form-control-wrap your-subject">
+																@if ($errors->has('issue'))
+																	<span class="help-block">
+																		<strong><small>{{ $errors->first('issue') }}</small></strong>
+																	</span>
+																@endif
 																<select name="issue" id="" >
-																	<option value="" class="wpcf7-form-control wpcf7-text">Phone Issue</option>
-																	<option value="" class="wpcf7-form-control wpcf7-text">IPhone-10</option>
-																	<option value="" class="wpcf7-form-control wpcf7-text">IPhone-11</option>
+																	<option value="" class="wpcf7-form-control wpcf7-text">-Phone Issue-</option>
+																	@foreach($issues as $issue)
+																		<option value="{{$issue->value}}" class="wpcf7-form-control wpcf7-text">{{$issue->value}}</option>
+																	@endforeach
 																</select>
 															</span>
 														</div>
@@ -89,3 +116,21 @@
 			</div>
 		</div>
 	</section>
+
+	@section('javascript')
+   
+	
+  	<script>
+		// $(function(){
+        //  'use strict'
+        // });
+
+         
+		 console.log('wola');
+         
+
+    
+  	</script>
+
+
+@endsection

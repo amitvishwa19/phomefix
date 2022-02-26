@@ -761,18 +761,17 @@
 @endsection
 
 
-@section('javascript')
+<!-- @section('javascript')
    
 	
   	<script>
-  		$(function(){
-         'use strict'
+  	
 
          
-
+		 console.log('wola');
          
 
-      });
+    
   	</script>
 
-@endsection
+@endsection -->

@@ -104,10 +104,11 @@
 
     <!-- Footer Scripts -->
     <!-- JS | Custom script for all pages -->
+    <!-- <script src="{{asset('public/client/assets/dist/js/jquery.js')}}"></script> -->
     <script src="{{asset('public/client/assets/dist/js/custom.js')}}"></script>
     <script src="{{asset('public/client/assets/dist/js/extra-rev-slider.js')}}"></script>
 
-
+    @yield('javascript')
 </body>
 
 

@@ -27,55 +27,33 @@ class InquiryController extends Controller
                 return $inquiry->created_at->diffForHumans();
             })
             ->addColumn('inquiry',function(Inquiry $inquiry){
-                return '<div class="card">
-                            <div class="card-body">
-                                <div class="media mb-3">
-                                    <div class="media-body align-self-center text-truncate">
-                                        <h4 class="m-0 font-weight-semibold text-dark font-15">'.$inquiry->subject.'</h4>
-                                        <p class="text-muted  mb-0 font-13"><span class="text-dark">By : </span>'.$inquiry->name.'</p>
-                                        <p class="text-muted  mb-0 font-13"><span class="text-dark"></span>'.$inquiry->email.'('.$inquiry->phone.')</p>
-                                    </div><!--end media-body-->
-                                </div>
-                                <hr class="hr-dashed">
-                                <div>
-                                    <p class="text-muted mt-2 mb-1">'.$inquiry->message.'</p>
-                                    <div class="d-flex justify-content-between">
-                                        <h6 class="font-weight-semibold">
-                                           <span class="badge badge-soft-pink font-weight-semibold ml-2"><i class="far fa-fw fa-clock"></i>'.$inquiry->created_at->diffForHumans().'</span>
-                                        </h6>
-                                    </div>
+                return '<div class="media">
+                            <div class="media-body align-self-center ">
+                                <span class="m-0 "><b>'.$inquiry->name.' ('.$inquiry->phone.')</b></span><br><br>
+                                <h6 class="m-0 text-dark"><b>'.$inquiry->message.'</b></h6>
+                                <ul class="p-0 list-inline mb-0">
+                                    <li class="list-inline-item text-muted">'.$inquiry->created_at->diffForHumans().'</li>
+                                    <li class="list-inline-item">by <a href="#">'.$inquiry->name.' ('.$inquiry->email.')</a></li>
+                                </ul>
+                            </div><!--end media-body-->
+                        </div>';
 
-
-                                    <div class="d-flex justify-content-between">
-                                        <div class="img-group">
-
-                                        </div>
-                                        <ul class="list-inline mb-0 align-self-center">
-                                            <li class="list-item d-inline-block">
-                                                <a class="ml-2" href="'.route('inquiry.show',$inquiry->id).'" >
-                                                    <i class="mdi mdi-file-send text-muted font-18"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-item d-inline-block">
-                                                <a class="delete" href="javascript:void(0);" id="'.$inquiry->id.'">
-                                                    <i class="mdi mdi-trash-can-outline text-muted font-18"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div><!--end task-box-->
-                                </div><!--end card-body-->
-                            </div>';
-
+            })
+            ->addColumn('status',function(Inquiry $inquiry){
+                if($inquiry->status != 'open'){
+                    return '<div class="badge badge-success">Closed</div>';
+                }else{
+                    return '<div class="badge badge-warning">Open</div>';
+                }
             })
             ->addColumn('action',function($data){
                 $link = '<div class="d-flex">'.
-                            '<a href="'.route('inquiry.edit',$data->id).'" class="mr-2"><small>Edit</small></a>'.
-                            '<a href="javascript:void(0);" id="'.$data->id.'" class="delete"><small>Delete</small></a>'.
+                            '<a href="'.route('inquiry.edit',$data->id).'" class="badge badge-success mr-2"><small>Edit</small></a>'.
+                            '<a href="javascript:void(0);" id="'.$data->id.'" class="badge badge-secondary delete"><small>Delete</small></a>'.
                         '</div>';
                 return $link;
             })
-            ->rawColumns(['action','inquiry'])
+            ->rawColumns(['action','inquiry','status'])
             ->make(true);
 
 
@@ -129,36 +107,32 @@ class InquiryController extends Controller
     public function update(Request $request, $id)
     {
         //dd($request->all());
-        $validate = $request->validate([
-            'response' => 'required'
-        ]);
-
+       
         $inquiry = Inquiry::findOrFail($id);
-        $inquiry->status = 'close';
-        $inquiry->user_id = auth()->user()->id;
         $inquiry->response = $request->response;
+        $inquiry->status = $request->status;
         $saved = $inquiry->save();
 
         if($saved){
             //dd($inquiry->subject);
-            $to = $request->email;
-            $subject = 'RE:' . $inquiry->subject;
-            $body = 'test body';
-            $data = array(
-                        'name' => $inquiry->name,
-                        'response' => $inquiry->response,
-                        'message' => $inquiry->message
-                    );
-            $view = 'mails.inquiryresponse';
+            // $to = $request->email;
+            // $subject = 'RE:' . $inquiry->subject;
+            // $body = 'test body';
+            // $data = array(
+            //             'name' => $inquiry->name,
+            //             'response' => $inquiry->response,
+            //             'message' => $inquiry->message
+            //         );
+            // $view = 'mails.inquiryresponse';
 
-            appmail($to,$subject,$body,$data,$view,true);
+            // appmail($to,$subject,$body,$data,$view,true);
 
         }
 
 
         return redirect()->route('inquiry.index')
         ->with([
-            'message'    =>'Response sent successfully',
+            'message'    =>'Inquiry updated successfully',
             'alert-type' => 'success',
         ]);
 

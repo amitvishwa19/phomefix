@@ -2,11 +2,11 @@
 
 namespace App\Listeners;
 
-use App\Events\InquiryEvent;
+use App\Events\ServiceRequestEvent;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class InquiryListner
+class ServiceOwnerListner
 {
     /**
      * Create the event listener.
@@ -21,38 +21,27 @@ class InquiryListner
     /**
      * Handle the event.
      *
-     * @param  InquiryEvent  $event
+     * @param  ServiceRequestEvent  $event
      * @return void
      */
-    public function handle(InquiryEvent $event)
+    public function handle(ServiceRequestEvent $event)
     {
-
-        //Mail to sender
-        $to = $event->email;
-        $subject = 'New Repair inquiry for '.setting('app_name');
-        $body = 'test body';
-        $data = array(
-                    'name' => $event->name,
-                    'message' => $event->message
-                );
-        $view = 'mails.inquiry';
-        appmail($to,$subject,$body,$data,$view,true);
-
         //Mail to owner of app
         $to = env('MAIL_FROM_ADDRESS');
         $subject = 'New Repair inquiry for '.setting('app_name');
         $body = 'test body';
         $data = array(
                     'name' => $event->name,
-                    'message' => $event->message
+                    'email' => $event->email,
+                    'phone' => $event->phone,
+                    'model' => $event->model,
+                    'issue' => $event->issue,
+                    'message' => $event->message,
                 );
         $view = 'mails.inquiry_owner';
 
         
         //activity()->log(env('MAIL_FROM_ADDRESS'));
         return appmail($to,$subject,$body,$data,$view,true);
-        
-       
-
     }
 }
