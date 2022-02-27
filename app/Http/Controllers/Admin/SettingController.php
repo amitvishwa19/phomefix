@@ -39,6 +39,32 @@ class SettingController extends Controller
     public function store(Request $request)
     {
         //dd($request->get('type'));
+
+        if($request->get('type') == 'global'){
+            setting('app_name',$request->app_name);
+            setting('app_description',$request->app_description);
+
+            if($request->file('app_icon')){
+                $auth_image_url = uploadImage($request->file('app_icon'));
+                setting('app_icon',$auth_image_url);
+            }
+    
+            if($request->file('app_fevicon')){
+                $auth_image_url = uploadImage($request->file('app_fevicon'));
+                setting('app_fevicon',$auth_image_url);
+            }
+    
+            if($request->file('auth_image')){
+                $auth_image_url = uploadImage($request->file('auth_image'));
+                setting('auth_image_url',$auth_image_url);
+            }
+
+            if($request->allow_register){
+                setting('allow_register','true');
+            }else{
+                setting('allow_register','false');
+            }
+        }
         
         if($request->get('type') == 'profile'){
             $this->updateProfile($request);
@@ -48,23 +74,9 @@ class SettingController extends Controller
             $this->changePassword($request);
         }
         
-        setting('app_name',$request->app_name);
-        setting('app_description',$request->app_description);
+        
 
-        if($request->file('app_icon')){
-            $auth_image_url = uploadImage($request->file('app_icon'));
-            setting('app_icon',$auth_image_url);
-        }
-
-        if($request->file('app_fevicon')){
-            $auth_image_url = uploadImage($request->file('app_fevicon'));
-            setting('app_fevicon',$auth_image_url);
-        }
-
-        if($request->file('auth_image')){
-            $auth_image_url = uploadImage($request->file('auth_image'));
-            setting('auth_image_url',$auth_image_url);
-        }
+        
      
 
         // return redirect()->route('setting.index')

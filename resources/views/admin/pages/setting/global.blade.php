@@ -5,8 +5,7 @@
         <small>General App settings</small>
     </div><!--end card-header-->
     <div class="card-body">
-        <form action="{{route('setting.store',['type'=>'global'])}}" method="post" enctype="multipart/form-data">
-            @csrf
+        
             <div class="form-group">
                 <label for="exampleInputEmail1"><b>App Name</b></label>
                 <input type="text" class="form-control" name="app_name" value="{{setting('app_name')}}">
@@ -52,10 +51,14 @@
             </div>
 
            
+            <div class="checkbox checkbox-primary">
+                <input id="checkbox2" type="checkbox" name="allow_register" {{ setting('allow_register') == 'true' ? 'checked' : null}}>
+                <label for="checkbox2">
+                    Allow User To Register
+                </label>
+            </div>
 
-
-            <button type="submit" class="btn btn-info waves-effect waves-light btn-sm">Save</button>
-        </form>
+     
 
     </div><!--end card-body-->
 </div>

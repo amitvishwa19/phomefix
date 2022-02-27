@@ -100,8 +100,11 @@ class ClientController extends Controller
 
     public function contact()
     {
+        $models = Option::where('type','model')->get();
+        $issues = Option::where('type','issue')->get();
 
-        return view('client.pages.contact');
+        return view('client.pages.contact')->with('models',$models)
+                                           ->with('issues',$issues);
     }
 
     public function subscribe(Request $request)

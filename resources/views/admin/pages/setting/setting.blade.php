@@ -52,24 +52,13 @@
                         </div><!--end card-header-->
                         <div class="card-body">
                             <ul class="mt-2">
-                                <li class="{{(!request()->type ) ? 'active' : 'null'}}">
-                                    <a href="{{route('setting.index')}}">
+                                <li class="{{(request()->type == 'global' ) ? 'active' : 'null'}}">
+                                    <a href="{{route('setting.index',['type'=>'global'])}}">
                                         <i data-feather="activity" class="align-self-center menu-icon"></i>
                                         <span>Global</span>
                                     </a>
                                 </li>
-                                <!-- <li class="{{(request()->type =='reading') ? 'active' : 'null'}}">
-                                    <a href="{{route('setting.index',['type'=>'reading'])}}">
-                                        <i data-feather="book-open" class="align-self-center menu-icon"></i>
-                                        <span>Reading</span>
-                                    </a>
-                                </li>
-                                <li class="{{(request()->type =='writing') ? 'active' : 'null'}}">
-                                    <a href="{{route('setting.index',['type'=>'writing'])}}">
-                                        <i data-feather="pen-tool" class="align-self-center menu-icon"></i>
-                                        <span>Writing</span>
-                                    </a>
-                                </li> -->
+                                
                                 <li class="{{(request()->type =='profile') ? 'active' : 'null'}}">
                                     <a href="{{route('setting.index',['type'=>'profile'])}}">
                                         <i data-feather="user" class="align-self-center menu-icon"></i>
@@ -87,7 +76,7 @@
                     </div>
                 </div>
                 <div class="col-md-9 setting-details">
-                    @if(!request()->type)
+                    @if(request()->type == 'global')
                         @include('admin.pages.setting.global')
                     @endif
 
